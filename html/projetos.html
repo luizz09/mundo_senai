@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Projetos</title>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="hamb">&#9776; Menu</label>
+        <nav>
+            <a href="../index.html">Início</a><span> /</span>
+            <a href="./clp.html">CLP</a><span> /</span>
+            <a href="./painel.html">Painel</a><span> /</span>
+            <a href="./automacao.html">Automação</a><span> /</span>
+            <a class="atual" href="./projetos.html">Projetos</a>
+        </nav>
+    </header>
+    <main>
+
+        <h1>Projetos</h1>
+        <p class="sub">Simulações no CADe_SIMU, o projeto elétrico e a montagem no painel.</p>
+
+        <section>
+            <h3>Partida direta (CADe_SIMU)</h3>
+            <p>-> Como funciona?</p>
+            <p>O motor liga direto na rede, por um único contator (K1). Apertando B1 (NA), a bobina de K1 é energizada, os contatos principais fecham e o motor gira. O contato auxiliar de K1 fica em paralelo com o B1 (contato de selo), então o motor continua ligado mesmo depois de soltar o botão.</p>
+            <p>Apertando B0 (NF) o circuito é interrompido e o motor desliga. O relé térmico (F1) também desliga tudo em caso de sobrecarga, e a lâmpada H1 mostra que o motor está ligado.</p>
+            <video src="../vid/partida_direta.mp4" controls muted preload="metadata"></video>
+        </section>
+
+        <section>
+            <h3>Partida reversora (CADe_SIMU)</h3>
+            <p>-> Como funciona?</p>
+            <p>São dois contatores: K1 liga o motor em um sentido e K2 no sentido contrário, porque ele troca a ordem de duas fases. B1 liga K1 (lâmpada H1) e B2 liga K2 (lâmpada H2), cada um com seu contato de selo.</p>
+            <p>O contato NF de K2 fica na linha de K1 e o NF de K1 na linha de K2 (intertravamento). Assim os dois nunca ligam juntos, o que causaria um curto-circuito. Para inverter o sentido, é preciso apertar B0 antes.</p>
+            <video src="../vid/partida_reversora.mp4" controls muted preload="metadata"></video>
+        </section>
+
+        <section>
+            <h3>Projeto elétrico</h3>
+            <p>Diagrama de comando e força da partida reversora. À esquerda fica o circuito de força (as três fases, o disjuntor, os contatores K1 e K2, o relé térmico e o motor) e à direita o circuito de comando, com os botões e as bobinas.</p>
+            <a href="../img/diagrama.jpeg" target="_blank"><img src="../img/diagrama.jpeg" alt="Diagrama de comando e força da partida reversora"></a>
+        </section>
+
+        <section class="pag">
+            <a href="./painel.html">
+                <h3>Painel elétrico</h3>
+                <p>Fotos da montagem e os componentes do painel</p>
+                <p class="ver">Ver painel &rarr;</p>
+            </a>
+        </section>
+
+    </main>
+    <footer>
+        <p>Feito por Luiz, Deivid e Amabilly</p>
+    </footer>
+</body>
+</html>

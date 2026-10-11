@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Automação</title>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="hamb">&#9776; Menu</label>
+        <nav>
+            <a href="../index.html">Início</a><span> /</span>
+            <a href="./clp.html">CLP</a><span> /</span>
+            <a href="./painel.html">Painel</a><span> /</span>
+            <a class="atual" href="./automacao.html">Automação</a><span> /</span>
+            <a href="./projetos.html">Projetos</a>
+        </nav>
+    </header>
+    <main>
+
+        <h1>Automação Industrial</h1>
+        <p class="sub">Como uma fábrica organiza seus equipamentos e como eles conversam entre si.</p>
+
+        <section>
+            <h3>Pirâmide da automação</h3>
+            <a href="../img/automacao.png" target="_blank"><img src="../img/automacao.png" alt="Pirâmide da automação com os cinco níveis"></a>
+            <p>A pirâmide divide a automação em cinco níveis. Na base ficam os equipamentos que mexem com o processo e, quanto mais perto do topo, mais os dados viram informação para a gestão da empresa. A comunicação entre os níveis é feita pelas redes industriais.</p>
+            <div class="grade">
+                <div class="item n1">
+                    <h4>Nível de gestão</h4>
+                    <p>Sistema ERP. Cuida da empresa como um todo: vendas, compras, estoque e finanças.</p>
+                </div>
+                <div class="item n2">
+                    <h4>Nível de planejamento</h4>
+                    <p>Sistema MES. Organiza e acompanha a produção: ordens de fabricação, tempos e qualidade.</p>
+                </div>
+                <div class="item n3">
+                    <h4>Nível de supervisão</h4>
+                    <p>SCADA, Historian e IHM. Telas para ver e comandar o processo, com alarmes e histórico de dados.</p>
+                </div>
+                <div class="item n4">
+                    <h4>Nível de controle</h4>
+                    <p>CLPs, PIDs e DCS. Processam a lógica, leem as entradas e comandam as saídas.</p>
+                </div>
+                <div class="item n5">
+                    <h4>Nível de campo</h4>
+                    <p>Sensores, atuadores e equipamentos, como motores e válvulas. É onde o processo acontece de verdade.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Rede PROFINET</h3>
+            <p>A PROFINET é uma rede industrial baseada em Ethernet, muito usada nos equipamentos da Siemens. Ela liga o CLP aos outros dispositivos usando cabo de rede comum (RJ45), com troca de dados rápida e em tempo real.</p>
+            <div class="grade">
+                <div class="item">
+                    <h4>IO-Controller</h4>
+                    <p>É quem controla a rede. Normalmente é o CLP.</p>
+                </div>
+                <div class="item">
+                    <h4>IO-Device</h4>
+                    <p>Dispositivos de campo que trocam dados com o CLP, como módulos de entradas e saídas, inversores e sensores.</p>
+                </div>
+                <div class="item">
+                    <h4>IO-Supervisor</h4>
+                    <p>Computador usado para programar, configurar e diagnosticar a rede, como o que roda o TIA Portal.</p>
+                </div>
+            </div>
+            <p>Cada dispositivo na rede tem um nome e um endereço IP, e a rede pode ser montada em linha, estrela ou anel.</p>
+            <p>Na pirâmide, a PROFINET liga o nível de campo ao de controle e também leva os dados do CLP para o nível de supervisão.</p>
+        </section>
+
+        <section class="pag">
+            <a href="./clp.html">
+                <h3>CLP utilizado no projeto</h3>
+                <p>Veja o modelo e as características do controlador</p>
+                <p class="ver">Ver CLP &rarr;</p>
+            </a>
+        </section>
+
+    </main>
+    <footer>
+        <p>Feito por Luiz, Deivid e Amabilly</p>
+    </footer>
+</body>
+</html>

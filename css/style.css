@@ -1,0 +1,364 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+    background-color: #EDF1F1;
+    font-size: 1rem;
+    color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial;
+    -webkit-tap-highlight-color: transparent;
+}
+
+header{
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: #264653;
+    width: 100%;
+    padding: 14px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+
+main{
+    flex: 1;
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+footer{
+    background-color: #264653;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+}
+
+footer p{
+    color: white;
+    font-size: 0.95rem;
+    padding: 0px 16px;
+}
+
+h1{
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: #1B3440;
+    letter-spacing: 0.3px;
+}
+
+.sub{
+    max-width: 600px;
+    margin: 0 auto 24px;
+    line-height: 1.5;
+    color: #44585C;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, padding 0.3s;
+}
+
+a:hover{
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+}
+
+span{
+    color: white;
+}
+
+header a,
+footer a{
+    padding: 4px 8px;
+}
+
+nav a.atual{
+    background-color: rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+}
+
+section{
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    padding: 16px;
+    margin: 0 auto 16px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left;
+    transition: box-shadow 0.4s ease;
+    border: 1px solid rgba(38, 70, 83, 0.2);
+    border-top: 4px solid #2A9D8F;
+}
+
+section:hover{
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+section h3{
+    text-align: center;
+    margin-bottom: 10px;
+    color: #264653;
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+}
+
+section img{
+    display: block;
+    margin: 0 auto 12px;
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid #9FB3B5;
+}
+
+section p{
+    margin: 6px 0;
+    line-height: 1.55;
+}
+
+section ul{
+    margin: 6px 0 6px 20px;
+    line-height: 1.55;
+}
+
+.pag a{
+    display: block;
+    color: #1F2937;
+}
+
+.pag a:hover{
+    background-color: transparent;
+}
+
+.pag{
+    transition: box-shadow 0.4s ease, transform 0.25s ease, background-color 0.25s;
+}
+
+.pag .ver{
+    margin-top: 10px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #2A9D8F;
+    transition: padding 0.25s;
+}
+
+.pag:hover{
+    box-shadow: 3px 4px 12px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform: translateY(-3px);
+    background-color: #F2FAF9;
+    border-color: #2A9D8F;
+}
+
+.pag:hover .ver{
+    padding-right: 6px;
+}
+
+.pag:active{
+    transform: translateY(0px);
+}
+
+.grade{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.grade .item{
+    background-color: #F2F6F6;
+    border: 1px solid rgba(38, 70, 83, 0.25);
+    border-left: 4px solid #264653;
+    border-radius: 10px;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.grade .item h4{
+    color: #264653;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+}
+
+.grade .item p{
+    font-size: 0.9rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+.n1{ border-left-color: #D9534F; }
+.n2{ border-left-color: #8E8E93; }
+.n3{ border-left-color: #5CA85C; }
+.n4{ border-left-color: #E8A317; }
+.n5{ border-left-color: #2B8FD6; }
+
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.galeria a{
+    display: block;
+    padding: 0px;
+}
+
+.galeria a:hover{
+    background-color: transparent;
+}
+
+.galeria img{
+    width: 100%;
+    max-width: none;
+    height: 160px;
+    object-fit: cover;
+    margin: 0;
+    cursor: pointer;
+    transition: transform 0.25s ease;
+}
+
+.galeria img:hover{
+    transform: scale(1.03);
+}
+
+section video{
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: 12px auto 0;
+    border-radius: 10px;
+    border: 1px solid #9FB3B5;
+    background-color: #000;
+}
+
+.tabela{
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+.tabela th{
+    background-color: #264653;
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabela td{
+    padding: 8px;
+    border-bottom: 1px solid #D6E0E0;
+}
+
+details{
+    margin-top: 10px;
+}
+
+summary{
+    cursor: pointer;
+    color: #264653;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#menu{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hamb{
+    display: none;
+}
+
+@media (max-width: 767px){
+    .hamb{
+        display: block;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 2px 8px;
+        user-select: none;
+    }
+
+    header nav{
+        display: none;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
+    #menu:checked ~ nav{
+        display: flex;
+    }
+
+    nav span{
+        display: none;
+    }
+
+    header nav a{
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+    }
+
+    header nav a.atual{
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+}
+
+@media (min-width: 768px){
+    body{
+        font-size: 1.05rem;
+    }
+
+    main{
+        padding: 32px 24px;
+    }
+
+    h1{
+        font-size: 2rem;
+    }
+
+    nav{
+        font-size: 1.05rem;
+        gap: 8px;
+    }
+
+    section{
+        max-width: 760px;
+        padding: 24px;
+    }
+
+    section img{
+        max-width: 440px;
+    }
+
+    .galeria img{
+        height: 200px;
+    }
+}

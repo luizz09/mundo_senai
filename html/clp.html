@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>CLP</title>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="hamb">&#9776; Menu</label>
+        <nav>
+            <a href="../index.html">Início</a><span> /</span>
+            <a class="atual" href="./clp.html">CLP</a><span> /</span>
+            <a href="./painel.html">Painel</a><span> /</span>
+            <a href="./automacao.html">Automação</a><span> /</span>
+            <a href="./projetos.html">Projetos</a>
+        </nav>
+    </header>
+    <main>
+
+        <h1>CLP</h1>
+        <p class="sub">O cérebro da automação: ele lê os sinais, decide o que fazer e comanda as máquinas.</p>
+
+        <section>
+            <h3>O que é o CLP</h3>
+            <img src="../img/clp.png" alt="CLP">
+            <p>O CLP (Controlador Lógico Programável) é um equipamento eletrônico que automatiza máquinas e processos. Ele recebe sinais de entrada (botões e sensores), processa tudo com base em um programa e aciona as saídas (contatores, lâmpadas, válvulas).</p>
+            <p>É muito usado na indústria porque é robusto, rápido e fácil de reprogramar sem mexer na fiação.</p>
+        </section>
+
+        <section>
+            <h3>CLP utilizado: Siemens S7-1200</h3>
+            <p>O modelo é a CPU 1214C DC/DC/DC. Isso quer dizer que a alimentação, as entradas e as saídas são todas em corrente contínua (24 V).</p>
+            <div class="grade">
+                <div class="item">
+                    <h4>Entradas digitais</h4>
+                    <p>14 entradas, onde ficam ligados botões, chaves e sensores.</p>
+                </div>
+                <div class="item">
+                    <h4>Saídas digitais</h4>
+                    <p>10 saídas, que acionam bobinas de contatores, lâmpadas e outros.</p>
+                </div>
+                <div class="item">
+                    <h4>Entradas analógicas</h4>
+                    <p>2 entradas para sinais que variam, como de 0 a 10 V.</p>
+                </div>
+                <div class="item">
+                    <h4>Porta PROFINET</h4>
+                    <p>Faz a comunicação em rede com o computador e outros equipamentos.</p>
+                </div>
+                <div class="item">
+                    <h4>Programação</h4>
+                    <p>Feita em Ladder, no software TIA Portal da Siemens.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Como o CLP faria a partida reversora</h3>
+            <p>No painel, a partida é feita com contatores e botões ligados direto. Com o CLP, a mesma lógica passa a ficar no programa. Este é um exemplo de como os endereços poderiam ser organizados:</p>
+            <table class="tabela">
+                <tr>
+                    <th>Endereço</th>
+                    <th>Elemento</th>
+                    <th>Função</th>
+                </tr>
+                <tr>
+                    <td>I0.0</td>
+                    <td>B1 (NA)</td>
+                    <td>Liga em um sentido</td>
+                </tr>
+                <tr>
+                    <td>I0.1</td>
+                    <td>B2 (NA)</td>
+                    <td>Liga no sentido contrário</td>
+                </tr>
+                <tr>
+                    <td>I0.2</td>
+                    <td>B0 (NF)</td>
+                    <td>Desliga tudo</td>
+                </tr>
+                <tr>
+                    <td>Q0.0</td>
+                    <td>K1</td>
+                    <td>Contator do 1º sentido</td>
+                </tr>
+                <tr>
+                    <td>Q0.1</td>
+                    <td>K2</td>
+                    <td>Contator do 2º sentido</td>
+                </tr>
+            </table>
+            <p>Na lógica, cada saída tem o seu contato de selo, e o contato NF de uma saída fica na linha da outra. Assim os dois contatores nunca ligam juntos (intertravamento).</p>
+        </section>
+
+        <section class="pag">
+            <a href="./automacao.html">
+                <h3>Onde o CLP fica na automação?</h3>
+                <p>Veja a pirâmide da automação e a rede PROFINET</p>
+                <p class="ver">Ver pirâmide &rarr;</p>
+            </a>
+        </section>
+
+    </main>
+    <footer>
+        <p>Feito por Luiz, Deivid e Amabilly</p>
+    </footer>
+</body>
+</html>
