@@ -212,6 +212,28 @@ section ul{
 .n4{ border-left-color: #E8A317; }
 .n5{ border-left-color: #2B8FD6; }
 
+section img.ladder{
+    max-width: 100%;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    background-color: #FFFFFF;
+}
+
+.legenda{
+    text-align: center;
+    font-size: 0.88rem;
+    color: #44585C;
+    margin-bottom: 10px;
+}
+
+.aviso{
+    background-color: #F2FAF9;
+    border-left: 4px solid #2A9D8F;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-top: 12px;
+}
+
 .galeria{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));

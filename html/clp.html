@@ -58,41 +58,70 @@
         </section>
 
         <section>
-            <h3>Como o CLP faria a partida reversora</h3>
-            <p>No painel, a partida é feita com contatores e botões ligados direto. Com o CLP, a mesma lógica passa a ficar no programa. Este é um exemplo de como os endereços poderiam ser organizados:</p>
+            <h3>Como o CLP faz a partida reversora</h3>
+            <p>No painel, a partida é feita com contatores e botões ligados direto. Com o CLP, essa lógica passa a ficar dentro de um programa em Ladder, que é uma linguagem desenhada como uma escada: a energia "flui" da esquerda para a direita e, se o caminho estiver livre, a saída é ligada.</p>
+            <a href="../img/ladder/como_ler_um_diagrama_ladder.png" target="_blank"><img class="ladder" src="../img/ladder/como_ler_um_diagrama_ladder.png" alt="Como ler um diagrama ladder: contato NA, contato NF e saída"></a>
+            <p class="legenda">Como ler um diagrama Ladder</p>
+            <p>Os contatos à esquerda são as condições (botões e sensores) e a bobina à direita é a saída, que no nosso caso aciona o contator. O contato NA deixa a energia passar quando é acionado, e o NF corta a energia quando é acionado.</p>
+
+            <p>Estes são os endereços usados no programa do projeto:</p>
             <table class="tabela">
                 <tr>
                     <th>Endereço</th>
-                    <th>Elemento</th>
+                    <th>Nome</th>
                     <th>Função</th>
                 </tr>
                 <tr>
-                    <td>I0.0</td>
-                    <td>B1 (NA)</td>
-                    <td>Liga em um sentido</td>
+                    <td>%I0.4</td>
+                    <td>d1</td>
+                    <td>Disjuntor, precisa estar ligado</td>
                 </tr>
                 <tr>
-                    <td>I0.1</td>
-                    <td>B2 (NA)</td>
-                    <td>Liga no sentido contrário</td>
+                    <td>%I0.2</td>
+                    <td>desliga</td>
+                    <td>Desliga o motor</td>
                 </tr>
                 <tr>
-                    <td>I0.2</td>
-                    <td>B0 (NF)</td>
-                    <td>Desliga tudo</td>
+                    <td>%I0.3</td>
+                    <td>emergencia</td>
+                    <td>Desliga tudo na emergência</td>
                 </tr>
                 <tr>
-                    <td>Q0.0</td>
-                    <td>K1</td>
-                    <td>Contator do 1º sentido</td>
+                    <td>%I0.5</td>
+                    <td>direta</td>
+                    <td>Liga o motor no sentido direto</td>
                 </tr>
                 <tr>
-                    <td>Q0.1</td>
-                    <td>K2</td>
-                    <td>Contator do 2º sentido</td>
+                    <td>%I0.6</td>
+                    <td>reversora</td>
+                    <td>Liga o motor no sentido contrário</td>
+                </tr>
+                <tr>
+                    <td>%Q0.0</td>
+                    <td>k1</td>
+                    <td>Contator do sentido direto</td>
+                </tr>
+                <tr>
+                    <td>%Q0.1</td>
+                    <td>k2</td>
+                    <td>Contator do sentido contrário</td>
                 </tr>
             </table>
-            <p>Na lógica, cada saída tem o seu contato de selo, e o contato NF de uma saída fica na linha da outra. Assim os dois contatores nunca ligam juntos (intertravamento).</p>
+
+            <a href="../img/ladder/reversora.png" target="_blank"><img class="ladder" src="../img/ladder/reversora.png" alt="Programa em Ladder da partida reversora no TIA Portal"></a>
+            <p class="legenda">Programa em Ladder da partida reversora</p>
+            <p>Cada sentido tem o seu contato de selo (k1 e k2), que mantém o motor ligado depois de soltar o botão. Além disso, o contato NF de k2 fica na linha de k1 e o NF de k1 na linha de k2. Isso é o intertravamento: os dois contatores nunca ligam juntos.</p>
+
+            <a href="../img/ladder/intertravamento.png" target="_blank"><img class="ladder" src="../img/ladder/intertravamento.png" alt="Simulação do intertravamento: com k1 ligado, o contato NF de k1 abre e k2 não liga"></a>
+            <p class="legenda">Intertravamento funcionando na simulação</p>
+            <p>Aqui o k1 está ligado. Mesmo com o botão reversora acionado, o contato NF de k1 está aberto (linha tracejada azul) e o k2 não liga.</p>
+
+            <div class="aviso">
+                <p><b>Atenção aos botões físicos:</b> no programa, "desliga" e "emergencia" aparecem como contatos NF. Em um circuito real o certo seria o contrário. Os botões de desligar e de emergência têm contato físico NF, então o CLP recebe sinal o tempo todo e só perde quando o botão é apertado. Por isso, no programa eles ficariam como contatos NA.</p>
+            </div>
+            <div class="aviso">
+                <p><b>Relé térmico:</b> ele não foi colocado no programa. Em um circuito real, o contato dele entraria em série com os outros, como no diagrama feito no CADe_SIMU, para desligar o motor em caso de sobrecarga.</p>
+            </div>
         </section>
 
         <section class="pag">
