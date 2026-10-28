@@ -304,6 +304,43 @@ summary{
     margin-bottom: 10px;
 }
 
+.contatos{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.contatos .item{
+    background-color: #F2F6F6;
+    border: 1px solid rgba(38, 70, 83, 0.25);
+    border-left: 4px solid #2A9D8F;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: left;
+}
+
+.contatos .item h4{
+    color: #264653;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.contatos .item p{
+    margin: 0;
+    word-break: break-all;
+}
+
+a.email{
+    color: #2A9D8F;
+    font-weight: bold;
+}
+
+a.email:hover{
+    background-color: transparent;
+    text-decoration: underline;
+}
+
 #menu{
     position: absolute;
     opacity: 0;
