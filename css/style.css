@@ -235,8 +235,9 @@ section img.ladder{
 }
 
 .galeria{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 10px;
     margin-top: 10px;
 }
@@ -244,6 +245,13 @@ section img.ladder{
 .galeria a{
     display: block;
     padding: 0px;
+    flex: 0 0 calc((100% - 10px) / 2);
+}
+
+@media (min-width: 560px){
+    .galeria a{
+        flex: 0 0 calc((100% - 20px) / 3);
+    }
 }
 
 .galeria a:hover{
